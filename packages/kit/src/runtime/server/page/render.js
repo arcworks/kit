@@ -100,7 +100,7 @@ export async function render_response({
 			: ''
 		: [
 				...Array.from(js).map((dep) => `<link rel="modulepreload" href="${dep}">`),
-				...Array.from(css).map((dep) => `<link rel="stylesheet" href="${dep}">`)
+				...Array.from(css).map((dep) => /\.lazy\.css$/.test(dep) ? `<link rel="preload" href="${dep}" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="${dep}"></noscript>` : `<link rel="stylesheet" href="${dep}">`)
 		  ].join('\n\t\t');
 
 	/** @type {string} */
