@@ -1,5 +1,12 @@
 # @sveltejs/kit
 
+## 1.0.0-next.138
+
+### Patch Changes
+
+- d6563169: [chore] prefer interfaces to types
+- 20dad18a: Remove the `prerender.force` option in favor of `prerender.onError`
+
 ## 1.0.0-next.137
 
 ### Patch Changes
